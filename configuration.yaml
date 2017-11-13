@@ -22,11 +22,11 @@ frontend:
 # Enables configuration UI
 config:
 
-#mqtt:
-#  broker: localhost
-#  protocol: 3.1
-#  username: !secret mqttuser
-#  password: !secret mqttpass
+mqtt:
+  broker: 10.0.0.201
+  protocol: 3.1
+  username: !secret mqttuser
+  password: !secret mqttpass
 
 
 http:
