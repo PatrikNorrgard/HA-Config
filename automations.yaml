@@ -1,0 +1,52 @@
+- action:
+  - data:
+      message: The sauna is ready for use :)
+      title: Sauna ready
+    service: notify.push_message
+  alias: Sauna ready
+  condition: []
+  id: '1510330573942'
+  trigger:
+  - above: '55'
+    entity_id: sensor.sauna
+    platform: numeric_state
+- action:
+  - data:
+      entity_id: switch.extlights
+    service: homeassistant.turn_on
+  alias: External Lights on
+  condition: []
+  id: '1510575361424'
+  trigger:
+  - event: sunset
+    platform: sun
+- action:
+  - data:
+      entity_id: switch.extlights
+    service: homeassistant.turn_off
+  alias: External Lights off
+  condition: []
+  id: '1510575855987'
+  trigger:
+  - event: sunrise
+    platform: sun
+- action:
+  - data:
+      entity_id: switch.new1
+    service: homeassistant.turn_off
+  - data:
+      entity_id: switch.new2
+    service: homeassistant.turn_off
+  - data:
+      entity_id: switch.new3
+    service: homeassistant.turn_off
+  alias: Livingroom lights off with tv
+  condition:
+  - after: '21:00'
+    condition: time
+  id: '1510576457365'
+  trigger:
+  - entity_id: media_player.samsung_led60_ue60f6300
+    from: 'on'
+    platform: state
+    to: 'off'

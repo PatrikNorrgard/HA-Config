@@ -1,0 +1,72 @@
+switch.telldus_tzwp100_plugin_switch_switch:
+  friendly_name: Noomicam_Z
+  icon: mdi:camcorder
+switch.new1:
+  friendly_name: Livingroom Burghie
+  icon: mdi:lamp
+switch.new2:
+  friendly_name: Livingroom Cabinet
+  icon: mdi:lightbulb
+switch.new3:
+  friendly_name: Livingroom Sub
+  icon: mdi:speaker
+switch.extlights:
+  friendly_name: External Lights
+  icon: mdi:alarm-light
+switch.new4:
+  friendly_name: Office PC
+  icon: mdi:desktop-classic
+switch.new5:
+  friendly_name: Office TV
+  icon: mdi:television
+sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_level:
+  hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_type:
+  hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_energy:
+  friendly_name: Fibaro wall plug
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power:
+  friendly_name: Fibaro wall plug Watts
+sensor.fibaro_system_fgwpef_wall_plug_gen5_exporting:
+  hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2:
+  friendly_name: FIBARO Wall Plug Power
+  hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_management:
+  hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_sourcenodeid:
+  hidden: true
+sensor.popp_zrain_exporting:
+  hidden: true
+sensor.popp_zrain_general:
+  hidden: true
+binary_sensor.popp_zrain_sensor:
+  hidden: true
+sensor.popp_unknown_type0004_id0011_exporting:
+  hidden: true
+sensor.popp_unknown_type0004_id0011_general:
+  hidden: true
+binary_sensor.popp_unknown_type0004_id0011_sensor:
+  hidden: true
+switch.new6:
+  friendly_name: new6 (unused)
+sensor.fibaro_system_fgwpef_wall_plug_gen5_interval:
+  hidden: true
+sensor.fibaro_system_fgwpef_wall_plug_gen5_previous_reading:
+  hidden: true
+binary_sensor.sensor:
+  hidden: true
+group.livingroom: {}
+group.office:
+  entity_id:
+  - switch.new4
+  - switch.new5
+  - media_player.denon_avrx1300w
+  - media_player.office
+sensor.popp_unknown_type0004_id0011_rain_rate:
+  friendly_name: Rain Rate
+sensor.popp_unknown_type0004_id0011_water:
+  friendly_name: Rain
+  unit_of_measurement: m3
+switch.fibaro_system_fgwpef_wall_plug_gen5_switch:
+  friendly_name: FIBARO Wall Plug Switch

@@ -1,0 +1,177 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude 
+  longitude: !secret longitude 
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 15
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Helsinki
+  #Customize device names et.c
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+#mqtt:
+#  broker: localhost
+#  protocol: 3.1
+#  username: !secret mqttuser
+#  password: !secret mqttpass
+
+
+http:
+  # Uncomment this to add a password (recommended!)
+  api_password: !secret http_password
+  # Uncomment this if you are using SSL or running in Docker etc
+  # base_url: example.duckdns.org:8123
+
+influxdb:
+  host: !secret influx_host
+  port: !secret influx_port
+  username: !secret influx_username
+  password: !secret influx_password
+  ssl: true
+  verify_ssl: false
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Ring.com
+ring:
+  username: !secret ring_user
+  password: !secret ring_password
+
+camera:
+  - platform: ring
+
+ffmpeg:
+
+notify:
+  - name: Push message
+    platform: pushover
+    api_key: !secret pushover_apikey
+    user_key: !secret pushover_userkey
+
+media_player:
+  - platform: denonavr
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+# Weather Prediction
+sensor:
+  - platform: yr
+
+  - platform: ring
+    monitored_conditions:
+     - battery
+#     - last_activity
+     - last_ding
+     - last_motion
+#     - volume
+
+#command line
+  - platform: command_line
+    command: "owread 28.2F5699030000/temperature"
+    name: Noomis
+    unit_of_measurement: "°C"
+
+  - platform: command_line
+    command: "owread 28.4A4699030000/temperature"
+    name: MasterBed
+    unit_of_measurement: "°C"
+
+  - platform: command_line
+    command: "owread 28.CD0BAE030000/temperature"
+    name: Outdoor
+    unit_of_measurement: "°C"
+
+  - platform: command_line
+    command: "owread 28.326183050000/temperature"
+    name: CTC
+    unit_of_measurement: "°C"
+
+  - platform: command_line
+    command: "owread 26.35283F010000/temperature"
+    name: Sauna
+    unit_of_measurement: "°C"
+
+  - platform: command_line
+    command: "owread 26.35283F010000/humidity"
+    name: SaunaRh
+    unit_of_measurement: "%RH"
+
+  - platform: command_line
+    command: "owread 26.B4423F010000/temperature"
+    name: Garage
+    unit_of_measurement: "°C"
+
+  - platform: command_line
+    command: "owread 26.B4423F010000/humidity"
+    name: GarageRh
+    unit_of_measurement: "%RH"
+
+  - platform: command_line
+    command: echo "scale=2;$(owread 1D.FB970F000000/counters.B) / 53000" | bc
+    name: Water
+    unit_of_measurement: "m3"
+
+#echo $(owread 1D.FB970F000000/counters.B) / 53000 | bc
+
+
+# Text to speech
+tts:
+  platform: google
+
+# Example configuration.yaml entry
+tellstick:
+
+zwave:
+  usb_path: /dev/ttyACM0
+# Example configuration.yaml entry
+
+switch:
+  - platform: tellstick
+
+group: !include groups.yaml
+
+# Example configuration.yaml entry for nmap
+# One whole subnet, and skipping two specific IPs.
+device_tracker:
+  - platform: nmap_tracker
+    hosts: 10.0.0.0/24
+    home_interval: 10
+    exclude:
+     - 10.0.0.66
+
+automation: !include automations.yaml
+#automation: !include_dir_list automation/
+
+# Grafana in Home Assistant
+panel_iframe:
+  grafana:
+    title: 'Statistik'
+    icon: mdi:elevation-rise
+    url: !secret grafana_url
