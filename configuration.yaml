@@ -97,52 +97,69 @@ sensor:
     command: "owread 28.2F5699030000/temperature"
     name: Noomis
     unit_of_measurement: "°C"
+    scan_interval: 360
 
   - platform: command_line
     command: "owread 28.4A4699030000/temperature"
     name: MasterBed
     unit_of_measurement: "°C"
+    scan_interval: 360
 
   - platform: command_line
     command: "owread 28.CD0BAE030000/temperature"
     name: Outdoor
     unit_of_measurement: "°C"
+    scan_interval: 360
 
   - platform: command_line
     command: "owread 28.326183050000/temperature"
     name: CTC
     unit_of_measurement: "°C"
+    scan_interval: 360
 
   - platform: command_line
     command: "owread 26.35283F010000/temperature"
     name: Sauna
     unit_of_measurement: "°C"
+    scan_interval: 360
 
   - platform: command_line
     command: "owread 26.35283F010000/humidity"
     name: SaunaRh
     unit_of_measurement: "%RH"
+    scan_interval: 360
 
   - platform: command_line
     command: "owread 26.B4423F010000/temperature"
     name: Garage
     unit_of_measurement: "°C"
+    scan_interval: 360
 
   - platform: command_line
     command: "owread 26.B4423F010000/humidity"
     name: GarageRh
     unit_of_measurement: "%RH"
+    scan_interval: 360
 
   - platform: command_line
     command: echo "scale=2;$(owread 1D.FB970F000000/counters.B) / 53000" | bc
     name: Water
     unit_of_measurement: "m3"
+    scan_interval: 360
 
   - platform: command_line
     command: /opt/bash-scripts/owread_water_cons_liter.sh
     name: WaterCons
     unit_of_measurement: "L"
+    scan_interval: 360
 
+  - platform: command_line
+    command: echo "scale=2;$(cat /sys/class/thermal/thermal_zone0/temp) / 1000"  | bc
+    name: CPU-temp
+    unit_of_measurement: "°C"
+    scan_interval: 900
+
+#echo "scale=2;$(cat /sys/class/thermal/thermal_zone0/temp) / 1000"  | bc
 
 # Text to speech
 tts:
