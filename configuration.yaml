@@ -138,7 +138,10 @@ sensor:
     name: Water
     unit_of_measurement: "m3"
 
-#echo $(owread 1D.FB970F000000/counters.B) / 53000 | bc
+  - platform: command_line
+    command: /opt/bash-scripts/owread_water_cons_liter.sh
+    name: WaterCons
+    unit_of_measurement: "L"
 
 
 # Text to speech
