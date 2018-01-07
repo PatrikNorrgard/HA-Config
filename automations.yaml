@@ -50,3 +50,17 @@
     from: 'on'
     platform: state
     to: 'off'
+- action:
+  - data:
+      mac: 4C:E6:76:6D:53:81
+    service: wake_on_lan.send_magic_packet
+  alias: NAS
+  condition:
+  - condition: state
+    entity_id: input_boolean.nas_wol
+    state: 'on'
+  id: '1511554586438'
+  trigger:
+    platform: time
+    minutes: '/1'
+    seconds: '/10'

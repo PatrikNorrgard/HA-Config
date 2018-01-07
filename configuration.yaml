@@ -19,6 +19,8 @@ homeassistant:
 # Enables the frontend
 frontend:
 
+wake_on_lan:
+
 # Enables configuration UI
 config:
 
@@ -77,6 +79,12 @@ history:
 # View all events in a logbook
 logbook:
 
+input_boolean:
+  nas_wol:
+    name: Buffalo_duo
+    initial: off
+    icon: mdi:server-network
+
 # Track the sun
 sun:
 
@@ -92,6 +100,18 @@ sensor:
      - last_motion
 #     - volume
 
+  - platform: mqtt
+    state_topic: "sensor/sht30/temperature"
+    name: "SHT30"
+    unit_of_measurement: "°C"
+    expire_after: 3600
+
+  - platform: mqtt
+    state_topic: "sensor/sht30/humidity"
+    name: "SHT30Rh"
+    unit_of_measurement: "%RH"
+    expire_after: 3600
+
 #command line
   - platform: command_line
     command: "owread 28.2F5699030000/temperature"
@@ -106,7 +126,10 @@ sensor:
     scan_interval: 360
 
   - platform: command_line
-    command: "owread 28.CD0BAE030000/temperature"
+    #command: "owread 28.CD0BAE030000/temperature"
+    #command: "curl  http://10.0.0.202/details.xml --silent | grep E3000003AE0BCD28 -C 5  | grep '<Temperature Units' | cut -d'>' -f 2 | cut -d'<' -f1"
+    #command: curl  http://10.0.0.202/details.xml --silent | sed '2 s/xmlns=".*"//g' | xmllint --xpath "string(/Devices-Detail-Response/owd_DS18B20[ROMId='E3000003AE0BCD28']/Temperature)" -
+    command: /opt/bash-scripts/owfs_outsideTemp.sh
     name: Outdoor
     unit_of_measurement: "°C"
     scan_interval: 360
