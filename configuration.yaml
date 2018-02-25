@@ -39,11 +39,11 @@ http:
 
 influxdb:
   host: !secret influx_host
-  port: !secret influx_port
+#  port: !secret influx_port
   username: !secret influx_username
   password: !secret influx_password
-  ssl: true
-  verify_ssl: false
+#  ssl: true
+#  verify_ssl: false
 
 # Checks for available updates
 updater:
@@ -114,13 +114,15 @@ sensor:
 
 #command line
   - platform: command_line
-    command: "owread 28.2F5699030000/temperature"
+#   command: "owread 28.2F5699030000/temperature"
+    command: /opt/bash-scripts/owfs_GenericRead.sh 1300000399562F28 Temperature
     name: Noomis
     unit_of_measurement: "°C"
     scan_interval: 360
 
   - platform: command_line
-    command: "owread 28.4A4699030000/temperature"
+    #command: "owread 28.4A4699030000/temperature"
+    command: /opt/bash-scripts/owfs_GenericRead.sh 4700000399464A28 Temperature
     name: MasterBed
     unit_of_measurement: "°C"
     scan_interval: 360
@@ -129,39 +131,63 @@ sensor:
     #command: "owread 28.CD0BAE030000/temperature"
     #command: "curl  http://10.0.0.202/details.xml --silent | grep E3000003AE0BCD28 -C 5  | grep '<Temperature Units' | cut -d'>' -f 2 | cut -d'<' -f1"
     #command: curl  http://10.0.0.202/details.xml --silent | sed '2 s/xmlns=".*"//g' | xmllint --xpath "string(/Devices-Detail-Response/owd_DS18B20[ROMId='E3000003AE0BCD28']/Temperature)" -
-    command: /opt/bash-scripts/owfs_outsideTemp.sh
+    #command: /opt/bash-scripts/owfs_outsideTemp.sh
+    command: /opt/bash-scripts/owfs_GenericRead.sh E3000003AE0BCD28 Temperature
     name: Outdoor
     unit_of_measurement: "°C"
     scan_interval: 360
 
   - platform: command_line
-    command: "owread 28.326183050000/temperature"
+  # command: "owread 28.326183050000/temperature"
+    command: /opt/bash-scripts/owfs_GenericRead.sh 2500000583613228 Temperature
     name: CTC
     unit_of_measurement: "°C"
     scan_interval: 360
 
   - platform: command_line
-    command: "owread 26.35283F010000/temperature"
+  # command: "owread 26.35283F010000/temperature"
+    command: /opt/bash-scripts/owfs_GenericRead.sh D80000013F283526 Temperature
     name: Sauna
     unit_of_measurement: "°C"
     scan_interval: 360
 
   - platform: command_line
-    command: "owread 26.35283F010000/humidity"
+#    command: "owread 26.35283F010000/humidity"
+    command: /opt/bash-scripts/owfs_GenericRead.sh D80000013F283526 Humidity
     name: SaunaRh
     unit_of_measurement: "%RH"
     scan_interval: 360
 
   - platform: command_line
-    command: "owread 26.B4423F010000/temperature"
+   #command: "owread 26.B4423F010000/temperature"
+    command: /opt/bash-scripts/owfs_GenericRead.sh A90000013F42B426 Temperature
     name: Garage
     unit_of_measurement: "°C"
     scan_interval: 360
 
   - platform: command_line
-    command: "owread 26.B4423F010000/humidity"
+    #command: "owread 26.B4423F010000/humidity"
+    command: /opt/bash-scripts/owfs_GenericRead.sh A90000013F42B426 Humidity
     name: GarageRh
     unit_of_measurement: "%RH"
+    scan_interval: 360
+
+  - platform: command_line
+    command: /opt/bash-scripts/owfs_GenericRead.sh C60000042FF89728 Temperature
+    name: Solar
+    unit_of_measurement: "°C"
+    scan_interval: 360
+
+  - platform: command_line
+    command: /opt/bash-scripts/owfs_GenericRead.sh 5800000399382428 Temperature
+    name: Office
+    unit_of_measurement: "°C"
+    scan_interval: 360
+
+  - platform: command_line
+    command: /opt/bash-scripts/owfs_GenericRead.sh CC000003C22BA428 Temperature
+    name: Foundation
+    unit_of_measurement: "°C"
     scan_interval: 360
 
   - platform: command_line

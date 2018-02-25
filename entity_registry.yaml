@@ -1,0 +1,60 @@
+switch.telldus_tzwp100_plugin_switch_switch:
+  platform: zwave
+  unique_id: 2-72057594076282880
+switch.fibaro_system_fgwpef_wall_plug_gen5_switch:
+  platform: zwave
+  unique_id: 3-72057594093060096
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power:
+  platform: zwave
+  unique_id: 3-72057594093256770
+sensor.fibaro_system_fgwpef_wall_plug_gen5_velocity:
+  platform: zwave
+  unique_id: 3-72057594093256802
+sensor.fibaro_system_fgwpef_wall_plug_gen5_rain_rate:
+  platform: zwave
+  unique_id: 3-72057594093256898
+sensor.fibaro_system_fgwpef_wall_plug_gen5_energy:
+  platform: zwave
+  unique_id: 3-72057594093273090
+sensor.fibaro_system_fgwpef_wall_plug_gen5_previous_reading:
+  platform: zwave
+  unique_id: 3-72057594093273106
+sensor.fibaro_system_fgwpef_wall_plug_gen5_interval:
+  platform: zwave
+  unique_id: 3-72057594093273123
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2:
+  platform: zwave
+  unique_id: 3-72057594093273218
+sensor.fibaro_system_fgwpef_wall_plug_gen5_exporting:
+  platform: zwave
+  unique_id: 3-72057594093273600
+sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_type:
+  platform: zwave
+  unique_id: 3-72057594094305281
+sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_level:
+  platform: zwave
+  unique_id: 3-72057594094305297
+sensor.fibaro_system_fgwpef_wall_plug_gen5_sourcenodeid:
+  platform: zwave
+  unique_id: 3-72057594094305313
+sensor.fibaro_system_fgwpef_wall_plug_gen5_power_management:
+  platform: zwave
+  unique_id: 3-72057594094305457
+sensor.popp_unknown_type0004_id0011_general:
+  platform: zwave
+  unique_id: 5-72057594126811170
+binary_sensor.popp_unknown_type0004_id0011_sensor:
+  platform: zwave
+  unique_id: 5-72057594126794752
+sensor.popp_unknown_type0004_id0011_rain_rate:
+  platform: zwave
+  unique_id: 5-72057594126811330
+sensor.popp_unknown_type0004_id0011_water:
+  platform: zwave
+  unique_id: 5-72057594126827522
+sensor.popp_unknown_type0004_id0011_exporting:
+  platform: zwave
+  unique_id: 5-72057594126828032
+binary_sensor.sensor:
+  platform: zwave
+  unique_id: 6-72057594143571968

@@ -1,7 +1,8 @@
 - action:
   - data:
-      message: The sauna is ready for use :)
-      title: Sauna ready
+      message: The sauna is ready for use :) The temp is now {{ states.sensor.sauna.state
+        | round(1)  }} °C
+      title: Sauna ready ({{ states.sensor.sauna.state | round(1)  }} °C)
     service: notify.push_message
   alias: Sauna ready
   condition: []
@@ -62,5 +63,66 @@
   id: '1511554586438'
   trigger:
     platform: time
-    minutes: '/1'
-    seconds: '/10'
+    minutes: /1
+    seconds: /10
+- action:
+  - data:
+      entity_id: switch.telldus_tzwp100_plugin_switch_switch
+    service: homeassistant.turn_off
+  - data:
+      entity_id: switch.new6
+    service: homeassistant.turn_off
+  alias: Childrens cameras off
+  condition: []
+  id: '1518799968022'
+  trigger:
+  - at: '9:00'
+    platform: time
+  - at: '16:00'
+    platform: time
+- action:
+  - data:
+      entity_id: switch.new6
+    service: homeassistant.turn_on
+  - data:
+      entity_id: switch.telldus_tzwp100_plugin_switch_switch
+    service: homeassistant.turn_on
+  alias: Childrens cameras on
+  condition: []
+  id: '1518800302919'
+  trigger:
+  - at: '20:00'
+    platform: time
+  - at: '12:30'
+    platform: time
+- action:
+  - data:
+      message: Garage getting too cold! The temp is now {{ states.sensor.garage.state
+        | round(1)  }} °C
+      title: Garage getting too cold! ( {{ states.sensor.garage.state | round(1)  }}
+        °C)
+      data:
+        sound: siren
+    service: notify.push_message
+  alias: Garage temp varning
+  condition: []
+  id: '1519565910987'
+  trigger:
+  - below: '5'
+    entity_id: sensor.garage
+    platform: numeric_state
+- action:
+  - data:
+      data:
+        sound: pushover
+      message: Garage temp is ok. The temp is now {{ states.sensor.garage.state |
+        round(1)  }} °C
+      title: Garage temp OK! ( {{ states.sensor.garage.state | round(1)  }} °C)
+    service: notify.push_message
+  alias: Garage temp ok
+  condition: []
+  id: '1519567080702'
+  trigger:
+  - above: '6'
+    entity_id: sensor.garage
+    platform: numeric_state
