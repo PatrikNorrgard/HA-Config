@@ -79,7 +79,7 @@ history:
 
 history_graph:
   gr1:
-    name: Sauna
+    name: SaunaSensors
     entities:
       - sensor.sauna
       - sensor.saunarh

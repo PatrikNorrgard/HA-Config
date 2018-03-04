@@ -48,7 +48,7 @@ Sauna:
   entities:
   - sensor.sauna
   - sensor.saunarh
-  - history_graph.sauna
+  - history_graph.saunasensors
 
 MainViewSensors:
   name: Sensors
@@ -59,4 +59,25 @@ MainViewSensors:
   - sensor.garagerh
   - sensor.solar
   - sensor.ctc
+
+ImportantDevices:
+  name: Devices
+  icon: mdi:server-network
+  entities:
+  - device_tracker.wifi_house
+  - device_tracker.wifi_garage
+  - device_tracker.owenet
+  - input_boolean.nas_wol
+  - switch.new6
+  - switch.telldus_tzwp100_plugin_switch_switch
+
+Garage:
+  view: true
+  icon: mdi:garage
+  entities:
+  - sensor.garage
+  - sensor.garagerh
+  - history_graph.garage
+  - device_tracker.pc_garage
+  - device_tracker.printer_garage
 
