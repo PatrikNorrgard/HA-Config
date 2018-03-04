@@ -41,3 +41,22 @@ LivingroomSwitches:
   - switch.new1
   - switch.new2
   - switch.new3
+
+Sauna:
+  view: true
+  icon: mdi:hot-tub
+  entities:
+  - sensor.sauna
+  - sensor.saunarh
+  - history_graph.sauna
+
+MainViewSensors:
+  name: Sensors
+  icon: mdi:elevation-rise
+  entities:
+  - sensor.outdoor
+  - sensor.garage
+  - sensor.garagerh
+  - sensor.solar
+  - sensor.ctc
+
