@@ -64,7 +64,7 @@
   trigger:
     platform: time
     minutes: /1
-    seconds: /10
+    seconds: /30
 - action:
   - data:
       entity_id: switch.telldus_tzwp100_plugin_switch_switch
@@ -97,12 +97,12 @@
     platform: time
 - action:
   - data:
-      message: Garage getting too cold! The temp is now {{ states.sensor.garage.state
-        | round(1)  }} °C
-      title: Garage getting too cold! ( {{ states.sensor.garage.state | round(1)  }}
-        °C)
       data:
         sound: siren
+      message: Garage getting too cold! The temp is now {{ states.sensor.garage.state
+        | round(2)  }} °C
+      title: Garage getting too cold! ( {{ states.sensor.garage.state | round(1)  }}
+        °C)
     service: notify.push_message
   alias: Garage temp varning
   condition: []
