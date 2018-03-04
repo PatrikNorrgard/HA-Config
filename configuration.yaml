@@ -31,6 +31,7 @@ mqtt:
   password: !secret mqttpass
 
 
+
 http:
   # Uncomment this to add a password (recommended!)
   api_password: !secret http_password
@@ -76,6 +77,22 @@ conversation:
 # Enables support for tracking state changes over time.
 history:
 
+history_graph:
+  gr1:
+    name: Sauna
+    entities:
+      - sensor.sauna
+      - sensor.saunarh
+    hours_to_show: 120
+
+  gr2:
+    name: Garage
+    entities:
+      - sensor.outdoor
+      - sensor.garage
+      - sensor.garagerh
+    hours_to_show: 120
+
 # View all events in a logbook
 logbook:
 
@@ -99,6 +116,12 @@ sensor:
      - last_ding
      - last_motion
 #     - volume
+
+  - platform: speedtest
+    monitored_conditions:
+      - ping
+      - download
+      - upload
 
   - platform: mqtt
     state_topic: "sensor/sht30/temperature"
@@ -191,7 +214,8 @@ sensor:
     scan_interval: 360
 
   - platform: command_line
-    command: echo "scale=2;$(owread 1D.FB970F000000/counters.B) / 53000" | bc
+    #command: echo "scale=2;$(owread 1D.FB970F000000/counters.B) / 53000" | bc
+    command: echo "scale=2;$(/opt/bash-scripts/owfs_GenericRead.sh 350000000F97FB1D counters.b) / 53000" | bc
     name: Water
     unit_of_measurement: "m3"
     scan_interval: 360
@@ -239,8 +263,8 @@ automation: !include automations.yaml
 #automation: !include_dir_list automation/
 
 # Grafana in Home Assistant
-panel_iframe:
-  grafana:
-    title: 'Statistik'
-    icon: mdi:elevation-rise
-    url: !secret grafana_url
+#panel_iframe:
+#  grafana:
+#    title: 'Statistik'
+#    icon: mdi:elevation-rise
+#    url: !secret grafana_url
