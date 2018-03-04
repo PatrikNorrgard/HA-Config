@@ -72,3 +72,9 @@ switch.fibaro_system_fgwpef_wall_plug_gen5_switch:
   friendly_name: FIBARO Wall Plug Switch
 sensor.fibaro_system_fgwpef_wall_plug_gen5_rain_rate:
   hidden: true
+group.mainviewsensors:
+  order: 1
+sensor.garagerh:
+  icon: mdi:water-percent
+sensor.saunarh:
+  icon: mdi:water-percent
