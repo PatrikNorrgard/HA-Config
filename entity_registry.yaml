@@ -58,3 +58,9 @@ sensor.popp_unknown_type0004_id0011_exporting:
 binary_sensor.sensor:
   platform: zwave
   unique_id: 6-72057594143571968
+media_player.cc_living_room:
+  platform: cast
+  unique_id: 0b65aae0-904e-e905-a402-ecf61e8d1c1a
+media_player.office:
+  platform: cast
+  unique_id: d357ed31-bbbf-68e1-8a3c-525eb65f47e9
