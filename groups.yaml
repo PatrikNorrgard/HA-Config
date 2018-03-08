@@ -85,6 +85,14 @@ BatteryLevels:
   - sensor.masterbed1
   - sensor.masterbed2
 
+Utility:
+  name: Utility usage
+  entities:
+  - sensor.watercons
+  - sensor.water
+  - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy
+  - sensor.fibaro_system_fgwpef_wall_plug_gen5_power
+  - sensor.fibaropowerstats_mean
 
 ImportantDevices:
   name: Devices
