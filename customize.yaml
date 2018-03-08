@@ -81,3 +81,16 @@ sensor.saunarh:
   icon: mdi:water-percent
 group.importantdevices:
   order: 2
+sensor.fibaro_system_fgwpef_wall_plug_gen5_velocity:
+  friendly_name: FIBARO System FGWPE/F Wall Plug Gen5 Velocity
+  hidden: true
+sensor.sht30:
+  hidden: true
+sensor.sht30rh:
+  hidden: true
+group.batterylevels:
+  order: 2
+sensor.masterbed1:
+  icon: mdi:remote
+sensor.masterbed2:
+  icon: mdi:remote

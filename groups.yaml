@@ -7,7 +7,8 @@ Livingroom:
 #  - switch.new3
   - group.livingroomswitches
   - media_player.samsung_led60_ue60f6300
-  - media_player.living_room_60
+  - media_player.cc_living_room
+
 Office:
   view: true
   icon: mdi:domain
@@ -18,10 +19,18 @@ Office:
   - media_player.office
 
 Outside:
+  icon: mdi:tree
+  entities:
+  - sensor.outdoor
+  - sensor.popp_unknown_type0004_id0011_water
+  - sensor.popp_unknown_type0004_id0011_rain_rate
+  - switch.extlights
+
+OutsideView:
   view: true
   icon: mdi:tree
   entities:
-  - switch.extlights
+  - group.Outside
 
 Bedroom:
   view: true
@@ -59,6 +68,23 @@ MainViewSensors:
   - sensor.garagerh
   - sensor.solar
   - sensor.ctc
+  - sensor.foundation
+  - sensor.masterbed
+  - sensor.noomis
+  - sensor.office
+  - sensor.sauna
+  - sensor.saunarh
+  - sensor.cputemp
+
+BatteryLevels:
+  name: Battery%
+  icon: mdi:battery-outline
+  entities:
+  - sensor.ring_front_door_battery
+  - sensor.tunnistin
+  - sensor.masterbed1
+  - sensor.masterbed2
+
 
 ImportantDevices:
   name: Devices
@@ -75,9 +101,20 @@ Garage:
   view: true
   icon: mdi:garage
   entities:
+  - sensor.outdoor
+  - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy
+  - sensor.fibaro_system_fgwpef_wall_plug_gen5_power
+  - sensor.fibaropowerstats_mean
   - sensor.garage
   - sensor.garagerh
   - history_graph.garage
   - device_tracker.pc_garage
   - device_tracker.printer_garage
 
+Internet:
+  name: Internet status
+  icon: mdi:speedometer
+  entities:
+  - sensor.speedtest_ping
+  - sensor.speedtest_download
+  - sensor.speedtest_upload

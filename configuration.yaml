@@ -91,6 +91,8 @@ history_graph:
       - sensor.outdoor
       - sensor.garage
       - sensor.garagerh
+      - sensor.fibaropowerstats_mean
+      - sensor.fibaro_system_fgwpef_wall_plug_gen5_power
     hours_to_show: 120
 
 # View all events in a logbook
@@ -108,6 +110,10 @@ sun:
 # Weather Prediction
 sensor:
   - platform: yr
+
+  - platform: statistics
+    name: FibaroPowerStats
+    entity_id: sensor.fibaro_system_fgwpef_wall_plug_gen5_power
 
   - platform: ring
     monitored_conditions:
