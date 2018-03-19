@@ -114,7 +114,7 @@
 - action:
   - data:
       data:
-        sound: pushover
+        sound: none
       message: Garage temp is ok. The temp is now {{ states.sensor.garage.state |
         round(1)  }} °C
       title: Garage temp OK! ( {{ states.sensor.garage.state | round(1)  }} °C)
@@ -123,6 +123,6 @@
   condition: []
   id: '1519567080702'
   trigger:
-  - above: '6'
+  - above: '7'
     entity_id: sensor.garage
     platform: numeric_state

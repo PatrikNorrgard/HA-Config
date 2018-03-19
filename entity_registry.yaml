@@ -1,66 +1,96 @@
 switch.telldus_tzwp100_plugin_switch_switch:
+  name:
   platform: zwave
   unique_id: 2-72057594076282880
 switch.fibaro_system_fgwpef_wall_plug_gen5_switch:
+  name:
   platform: zwave
   unique_id: 3-72057594093060096
 sensor.fibaro_system_fgwpef_wall_plug_gen5_power:
+  name:
   platform: zwave
   unique_id: 3-72057594093256770
 sensor.fibaro_system_fgwpef_wall_plug_gen5_velocity:
+  name:
   platform: zwave
   unique_id: 3-72057594093256802
 sensor.fibaro_system_fgwpef_wall_plug_gen5_rain_rate:
+  name:
   platform: zwave
   unique_id: 3-72057594093256898
 sensor.fibaro_system_fgwpef_wall_plug_gen5_energy:
+  name:
   platform: zwave
   unique_id: 3-72057594093273090
 sensor.fibaro_system_fgwpef_wall_plug_gen5_previous_reading:
+  name:
   platform: zwave
   unique_id: 3-72057594093273106
 sensor.fibaro_system_fgwpef_wall_plug_gen5_interval:
+  name:
   platform: zwave
   unique_id: 3-72057594093273123
 sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2:
+  name:
   platform: zwave
   unique_id: 3-72057594093273218
 sensor.fibaro_system_fgwpef_wall_plug_gen5_exporting:
+  name:
   platform: zwave
   unique_id: 3-72057594093273600
 sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_type:
+  name:
   platform: zwave
   unique_id: 3-72057594094305281
 sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_level:
+  name:
   platform: zwave
   unique_id: 3-72057594094305297
 sensor.fibaro_system_fgwpef_wall_plug_gen5_sourcenodeid:
+  name:
   platform: zwave
   unique_id: 3-72057594094305313
 sensor.fibaro_system_fgwpef_wall_plug_gen5_power_management:
+  name:
   platform: zwave
   unique_id: 3-72057594094305457
 sensor.popp_unknown_type0004_id0011_general:
+  name:
   platform: zwave
   unique_id: 5-72057594126811170
 binary_sensor.popp_unknown_type0004_id0011_sensor:
+  name:
   platform: zwave
   unique_id: 5-72057594126794752
 sensor.popp_unknown_type0004_id0011_rain_rate:
+  name:
   platform: zwave
   unique_id: 5-72057594126811330
 sensor.popp_unknown_type0004_id0011_water:
+  name:
   platform: zwave
   unique_id: 5-72057594126827522
 sensor.popp_unknown_type0004_id0011_exporting:
+  name:
   platform: zwave
   unique_id: 5-72057594126828032
 binary_sensor.sensor:
+  name:
   platform: zwave
   unique_id: 6-72057594143571968
 media_player.cc_living_room:
+  name:
   platform: cast
   unique_id: 0b65aae0-904e-e905-a402-ecf61e8d1c1a
 media_player.office:
+  name:
   platform: cast
   unique_id: d357ed31-bbbf-68e1-8a3c-525eb65f47e9
+media_player.plex_web_firefox:
+  name:
+  platform: plex
+  unique_id: k8g66c3k5gf5l74m3qk9wra9
+media_player.tv_ue60f6300:
+  name:
+  platform: plex
+  unique_id: bdcm4m3hgjlz4

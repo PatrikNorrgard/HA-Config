@@ -10,6 +10,7 @@ case $Family in
  1D) DeviceType=DS2423 ;;
  26) DeviceType=DS2438 ;;
  28) DeviceType=DS18B20 ;;
+ 10) DeviceType=DS18S20 ;;
  *) echo "Family $Family not supported"
  exit 1 ;;
 esac
@@ -20,8 +21,8 @@ esac
 case $2 in
  [tT]emperature) Value=Temperature ;;
  [hH]umidity) Value=Humidity ;;
- [cC]ounters.A) Value=Counter_A ;;
- [cC]ounters.B) Value=Counter_B ;;
+ [cC]ounters.[aA]) Value=Counter_A ;;
+ [cC]ounters.[bB]) Value=Counter_B ;;
  *) echo "$2 is not a valid data type"
   exit 1 ;;
 esac
