@@ -13,7 +13,7 @@ switch.new3:
 switch.extlights:
   friendly_name: External Lights
   icon: mdi:alarm-light
-switch.new4:
+switch.old1:
   friendly_name: Office PC
   icon: mdi:desktop-classic
 switch.new5:
@@ -68,8 +68,10 @@ group.office:
   - media_player.office
 sensor.popp_unknown_type0004_id0011_rain_rate:
   friendly_name: Rain Rate
+  icon: mdi:weather-rainy
 sensor.popp_unknown_type0004_id0011_water:
   friendly_name: Rain
+  icon: mdi:weather-rainy
   unit_of_measurement: m3
 switch.fibaro_system_fgwpef_wall_plug_gen5_switch:
   friendly_name: FIBARO Wall Plug Switch
@@ -105,3 +107,9 @@ group.utility:
   order: 4
 sensor.fibaropowerstats_mean:
   icon: mdi:flash
+sensor.popprainrate_mean:
+  icon: mdi:weather-rainy
+binary_sensor.unknown_node_6_sensor:
+  hidden: true
+sensor.home_eta:
+  hidden: true

@@ -24,6 +24,10 @@ wake_on_lan:
 # Enables configuration UI
 config:
 
+nest:
+  client_id: adf26b6d-dd1f-45c3-91ca-b6e1ae35412a
+  client_secret: KlBtYqqt3JCbzPkpUHzB3x2AT
+
 mqtt:
   broker: 10.0.0.201
   protocol: 3.1
@@ -102,6 +106,23 @@ history_graph:
       - sensor.speedtest_upload
     hours_to_show: 48
 
+  gr4:
+    name: SolarHeat
+    entities:
+      - sensor.solar
+      - sensor.ctc
+      - sensor.watercons
+    hours_to_show: 72
+
+  gr5:
+    name: HistInOutTemp
+    entities:
+      - sensor.outdoor
+      - sensor.masterbed
+      - sensor.noomis
+    hours_to_show: 168 
+    
+
 # View all events in a logbook
 logbook:
 
@@ -118,10 +139,23 @@ sun:
 sensor:
   - platform: yr
 
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /home
+      - type: memory_free
+      - type: load_15m
+      - type: processor_use
+
   - platform: statistics
     name: FibaroPowerStats
     entity_id: sensor.fibaro_system_fgwpef_wall_plug_gen5_power
     sampling_size: 40
+
+  - platform: statistics
+    name: PoppRainrate
+    entity_id: sensor.popp_unknown_type0004_id0011_rain_rate
+    sampling_size: 10
 
   - platform: ring
     monitored_conditions:
@@ -136,6 +170,7 @@ sensor:
       - ping
       - download
       - upload
+    server_id: 4549
 
   - platform: mqtt
     state_topic: "sensor/sht30/temperature"

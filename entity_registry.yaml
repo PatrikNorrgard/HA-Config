@@ -94,3 +94,43 @@ media_player.tv_ue60f6300:
   name:
   platform: plex
   unique_id: bdcm4m3hgjlz4
+media_player.galaxy_s7_edge:
+  name:
+  platform: plex
+  unique_id: 853e4101f742e1e4-com-plexapp-android
+light.paaty:
+  name:
+  platform: tradfri
+  unique_id: light-7e0c355204800128-65537
+light.peili:
+  name:
+  platform: tradfri
+  unique_id: light-7e0c355204800128-65538
+light.poyta:
+  name:
+  platform: tradfri
+  unique_id: light-7e0c355204800128-65543
+light.makkari:
+  name:
+  platform: tradfri
+  unique_id: group-7e0c355204800128-168662
+light.yk_eteinen:
+  name:
+  platform: tradfri
+  unique_id: group-7e0c355204800128-168664
+zwave.aeotec_zw090_zstick_gen5_eu:
+  name:
+  platform: zwave
+  unique_id: node-1
+zwave.telldus_tzwp100_plugin_switch:
+  name:
+  platform: zwave
+  unique_id: node-2
+zwave.fibaro_system_fgwpef_wall_plug_gen5:
+  name:
+  platform: zwave
+  unique_id: node-3
+zwave.popp_unknown_type0004_id0011:
+  name:
+  platform: zwave
+  unique_id: node-5

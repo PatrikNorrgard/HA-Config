@@ -22,8 +22,10 @@ Outside:
   icon: mdi:tree
   entities:
   - sensor.outdoor
+  - sensor.solar
   - sensor.popp_unknown_type0004_id0011_water
-  - sensor.popp_unknown_type0004_id0011_rain_rate
+#  - sensor.popp_unknown_type0004_id0011_rain_rate
+  - sensor.popprainrate_mean
   - switch.extlights
 
 OutsideView:
@@ -37,6 +39,7 @@ Bedroom:
   icon: mdi:hotel
   entities:
   - group.bedroomlights
+  - sensor.MasterBed
 
 BedroomLights:
   icon: mdi:hotel
@@ -58,6 +61,18 @@ Sauna:
   - sensor.sauna
   - sensor.saunarh
   - history_graph.saunasensors
+
+WaterHeat:
+  view: true
+  icon: mdi:oil-temperature
+  entities:
+  - history_graph.SolarHeat
+
+InOutTemp:
+  icon: mdi:thermometer-lines
+  view: true
+  entities:
+  - history_graph.HistInOutTemp
 
 MainViewSensors:
   name: Sensors
@@ -126,3 +141,11 @@ Internet:
   - sensor.speedtest_ping
   - sensor.speedtest_download
   - sensor.speedtest_upload
+
+Kids:
+  view: true
+  icon: mdi:baby
+  entities:
+  - sensor.Noomis
+  - switch.new6
+  - switch.telldus_tzwp100_plugin_switch_switch
