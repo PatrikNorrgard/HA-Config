@@ -19,20 +19,54 @@ homeassistant:
 # Enables the frontend
 frontend:
 
+alert:
+  big_garage_door:
+    name: Alert! Big garage door left open!
+    done_message: Ok! Big garage closed again.
+    entity_id: binary_sensor.fibaro_system_fgbs001_universal_binary_sensor_sensor
+    state: 'on'
+    repeat:
+      - 5
+      - 10
+      - 15
+      - 30
+    can_acknowledge: True
+    skip_first: True
+    notifiers:
+      - push_message  
+
+  small_garage_door:
+    name: Alert! Side garage door left open!
+    done_message: Ok! Side door closed again.
+    entity_id: binary_sensor.fibaro_system_fgbs001_universal_binary_sensor_sensor_2
+    state: 'on'
+    repeat:
+      - 5
+      - 10
+      - 15
+      - 30
+    can_acknowledge: True
+    skip_first: True
+    notifiers:
+      - push_message
+
 wake_on_lan:
 
 # Enables configuration UI
 config:
 
 nest:
-  client_id: adf26b6d-dd1f-45c3-91ca-b6e1ae35412a
-  client_secret: KlBtYqqt3JCbzPkpUHzB3x2AT
+  client_id: !secret nest_clientid
+  client_secret: !secret nest_clientsecret
 
-mqtt:
-  broker: 10.0.0.201
-  protocol: 3.1
-  username: !secret mqttuser
-  password: !secret mqttpass
+rfxtrx:
+  device: /dev/serial/by-id/usb-RFXCOM_RFXtrx433_A12GLERC-if00-port0
+
+#mqtt:
+#  broker: 10.0.0.201
+#  protocol: 3.1
+#  username: !secret mqttuser
+#  password: !secret mqttpass
 
 
 
@@ -139,6 +173,22 @@ sun:
 sensor:
   - platform: yr
 
+  - platform: min_max
+    type: min
+    name: OutsideTempMin
+    entity_ids:
+      - sensor.outdoor
+      - sensor.edvinoutside_temperature
+
+  - platform: rfxtrx
+    automatic_add: False
+    devices:
+      0a5202014701013b1e0269:
+        name: EdvinOutside
+        data_type:
+         - Humidity
+         - Temperature
+
   - platform: systemmonitor
     resources:
       - type: disk_use_percent
@@ -172,17 +222,17 @@ sensor:
       - upload
     server_id: 4549
 
-  - platform: mqtt
-    state_topic: "sensor/sht30/temperature"
-    name: "SHT30"
-    unit_of_measurement: "°C"
-    expire_after: 3600
+#  - platform: mqtt
+#    state_topic: "sensor/sht30/temperature"
+#    name: "SHT30"
+#    unit_of_measurement: "°C"
+#    expire_after: 3600
 
-  - platform: mqtt
-    state_topic: "sensor/sht30/humidity"
-    name: "SHT30Rh"
-    unit_of_measurement: "%RH"
-    expire_after: 3600
+#  - platform: mqtt
+#    state_topic: "sensor/sht30/humidity"
+#    name: "SHT30Rh"
+#    unit_of_measurement: "%RH"
+#    expire_after: 3600
 
 #command line
   - platform: command_line
@@ -254,7 +304,7 @@ sensor:
 
   - platform: command_line
     command: /opt/bash-scripts/owfs_GenericRead.sh 5800000399382428 Temperature
-    name: Office
+    name: Edvins
     unit_of_measurement: "°C"
     scan_interval: 360
 
@@ -290,14 +340,37 @@ tts:
   platform: google
 
 # Example configuration.yaml entry
-tellstick:
+#tellstick:
 
 zwave:
   usb_path: /dev/ttyACM0
 # Example configuration.yaml entry
 
 switch:
-  - platform: tellstick
+  platform: rfxtrx
+  automatic_add: false
+  signal_repititions: 2
+  devices:
+    0b1100040059af9601010f70:
+      name: rfx_new1
+    0b1100070059af9602010f70:
+      name: rfx_new2
+    0b1100080059af9603010f70:
+      name: rfx_new3
+    0b11001d00e984de01010f70:
+      name: rfx_new4
+    0b11000400e984de02010f70:
+      name: rfx_new5
+    0b11000600e984de03010f70:
+      name: rfx_new6
+    0710010950010170:
+      name: rfx_old1
+    0710010b50020170:
+      name: rfx_old2
+    "0710010550030170":
+      name: rfx_GarageExtLights
+
+#  - platform: tellstick
 
 group: !include groups.yaml
 

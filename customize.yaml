@@ -1,22 +1,22 @@
 switch.telldus_tzwp100_plugin_switch_switch:
   friendly_name: Noomicam_Z
   icon: mdi:camcorder
-switch.new1:
+switch.rfx_new1:
   friendly_name: Livingroom Burghie
   icon: mdi:lamp
-switch.new2:
+switch.rfx_new2:
   friendly_name: Livingroom Cabinet
   icon: mdi:lightbulb
-switch.new3:
+switch.rfx_new3:
   friendly_name: Livingroom Sub
   icon: mdi:speaker
-switch.extlights:
+switch.rfx_GarageExtLights:
   friendly_name: External Lights
   icon: mdi:alarm-light
-switch.old1:
+switch.rfx_old1:
   friendly_name: Office PC
   icon: mdi:desktop-classic
-switch.new5:
+switch.rfx_new5:
   friendly_name: Office TV
   icon: mdi:television
 sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_level:
@@ -50,7 +50,7 @@ sensor.popp_unknown_type0004_id0011_general:
   hidden: true
 binary_sensor.popp_unknown_type0004_id0011_sensor:
   hidden: true
-switch.new6:
+switch.rfx_new6:
   friendly_name: Edvin Cam
   icon: mdi:camcorder
 sensor.fibaro_system_fgwpef_wall_plug_gen5_interval:
@@ -62,8 +62,8 @@ binary_sensor.sensor:
 group.livingroom: {}
 group.office:
   entity_id:
-  - switch.new4
-  - switch.new5
+  - switch.rfx_old1
+  - switch.rfx_new5
   - media_player.denon_avrx1300w
   - media_player.office
 sensor.popp_unknown_type0004_id0011_rain_rate:
@@ -113,3 +113,9 @@ binary_sensor.unknown_node_6_sensor:
   hidden: true
 sensor.home_eta:
   hidden: true
+binary_sensor.fibaro_system_fgbs001_universal_binary_sensor_sensor_2:
+  device_class: door
+binary_sensor.fibaro_system_fgbs001_universal_binary_sensor_sensor:
+  device_class: garage_door
+switch.rfx_new4:
+  friendly_name: rfx_new4(broken, dummy for pc)

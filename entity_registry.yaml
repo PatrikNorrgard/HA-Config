@@ -1,136 +1,190 @@
 switch.telldus_tzwp100_plugin_switch_switch:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 2-72057594076282880
 switch.fibaro_system_fgwpef_wall_plug_gen5_switch:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 3-72057594093060096
 sensor.fibaro_system_fgwpef_wall_plug_gen5_power:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 3-72057594093256770
 sensor.fibaro_system_fgwpef_wall_plug_gen5_velocity:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 3-72057594093256802
 sensor.fibaro_system_fgwpef_wall_plug_gen5_rain_rate:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 3-72057594093256898
 sensor.fibaro_system_fgwpef_wall_plug_gen5_energy:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 3-72057594093273090
 sensor.fibaro_system_fgwpef_wall_plug_gen5_previous_reading:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 3-72057594093273106
 sensor.fibaro_system_fgwpef_wall_plug_gen5_interval:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 3-72057594093273123
 sensor.fibaro_system_fgwpef_wall_plug_gen5_power_2:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 3-72057594093273218
 sensor.fibaro_system_fgwpef_wall_plug_gen5_exporting:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 3-72057594093273600
 sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_type:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 3-72057594094305281
 sensor.fibaro_system_fgwpef_wall_plug_gen5_alarm_level:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 3-72057594094305297
 sensor.fibaro_system_fgwpef_wall_plug_gen5_sourcenodeid:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 3-72057594094305313
 sensor.fibaro_system_fgwpef_wall_plug_gen5_power_management:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 3-72057594094305457
 sensor.popp_unknown_type0004_id0011_general:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 5-72057594126811170
 binary_sensor.popp_unknown_type0004_id0011_sensor:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 5-72057594126794752
 sensor.popp_unknown_type0004_id0011_rain_rate:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 5-72057594126811330
 sensor.popp_unknown_type0004_id0011_water:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 5-72057594126827522
 sensor.popp_unknown_type0004_id0011_exporting:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 5-72057594126828032
 binary_sensor.sensor:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 6-72057594143571968
 media_player.cc_living_room:
+  config_entry_id: 5fe7bca3b50a4834b54e2a185f9197b0
   name:
   platform: cast
   unique_id: 0b65aae0-904e-e905-a402-ecf61e8d1c1a
 media_player.office:
+  config_entry_id: 5fe7bca3b50a4834b54e2a185f9197b0
   name:
   platform: cast
   unique_id: d357ed31-bbbf-68e1-8a3c-525eb65f47e9
 media_player.plex_web_firefox:
+  config_entry_id:
   name:
   platform: plex
   unique_id: k8g66c3k5gf5l74m3qk9wra9
 media_player.tv_ue60f6300:
+  config_entry_id:
   name:
   platform: plex
   unique_id: bdcm4m3hgjlz4
 media_player.galaxy_s7_edge:
+  config_entry_id:
   name:
   platform: plex
   unique_id: 853e4101f742e1e4-com-plexapp-android
 light.paaty:
+  config_entry_id:
   name:
   platform: tradfri
   unique_id: light-7e0c355204800128-65537
 light.peili:
+  config_entry_id:
   name:
   platform: tradfri
   unique_id: light-7e0c355204800128-65538
 light.poyta:
+  config_entry_id:
   name:
   platform: tradfri
   unique_id: light-7e0c355204800128-65543
 light.makkari:
+  config_entry_id:
   name:
   platform: tradfri
   unique_id: group-7e0c355204800128-168662
 light.yk_eteinen:
+  config_entry_id:
   name:
   platform: tradfri
   unique_id: group-7e0c355204800128-168664
 zwave.aeotec_zw090_zstick_gen5_eu:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: node-1
 zwave.telldus_tzwp100_plugin_switch:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: node-2
 zwave.fibaro_system_fgwpef_wall_plug_gen5:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: node-3
 zwave.popp_unknown_type0004_id0011:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: node-5
+zwave.unknown_node_6:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-6
+zwave.fibaro_system_fgbs001_universal_binary_sensor:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-7
+binary_sensor.fibaro_system_fgbs001_universal_binary_sensor_sensor:
+  config_entry_id:
+  name: GarageDoorCar
+  platform: zwave
+  unique_id: 7-72057594160349184
+binary_sensor.fibaro_system_fgbs001_universal_binary_sensor_sensor_2:
+  config_entry_id:
+  name: GarageDoorSmall
+  platform: zwave
+  unique_id: 7-144115188198277120

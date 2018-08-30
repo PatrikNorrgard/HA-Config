@@ -2,9 +2,6 @@ Livingroom:
   view: true
   icon: mdi:sofa
   entities:
-#  - switch.new1
-#  - switch.new2
-#  - switch.new3
   - group.livingroomswitches
   - media_player.samsung_led60_ue60f6300
   - media_player.cc_living_room
@@ -13,8 +10,8 @@ Office:
   view: true
   icon: mdi:domain
   entities:
-  - switch.new4
-  - switch.new5
+  - switch.rfx_old1
+  - switch.rfx_new5
   - media_player.denon_avrx1300w
   - media_player.office
 
@@ -50,9 +47,9 @@ BedroomLights:
 LivingroomSwitches:
   icon: mdi:sofa
   entities:
-  - switch.new1
-  - switch.new2
-  - switch.new3
+  - switch.rfx_new1
+  - switch.rfx_new2
+  - switch.rfx_new3
 
 Sauna:
   view: true
@@ -86,7 +83,7 @@ MainViewSensors:
   - sensor.foundation
   - sensor.masterbed
   - sensor.noomis
-  - sensor.office
+  - sensor.edvins
   - sensor.sauna
   - sensor.saunarh
   - sensor.cputemp
@@ -117,13 +114,20 @@ ImportantDevices:
   - device_tracker.wifi_garage
   - device_tracker.owenet
   - input_boolean.nas_wol
-  - switch.new6
+  - switch.rfx_new6
   - switch.telldus_tzwp100_plugin_switch_switch
+
+Doors:
+  icon: mdi:door
+  entities:
+  - binary_sensor.fibaro_system_fgbs001_universal_binary_sensor_sensor_2
+  - binary_sensor.fibaro_system_fgbs001_universal_binary_sensor_sensor
 
 Garage:
   view: true
   icon: mdi:garage
   entities:
+  - group.doors
   - sensor.outdoor
   - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy
   - sensor.fibaro_system_fgwpef_wall_plug_gen5_power
@@ -147,5 +151,6 @@ Kids:
   icon: mdi:baby
   entities:
   - sensor.Noomis
-  - switch.new6
+  - sensor.Edvins
+  - switch.rfx_new6
   - switch.telldus_tzwp100_plugin_switch_switch
