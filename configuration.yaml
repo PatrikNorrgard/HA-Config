@@ -156,6 +156,14 @@ history_graph:
       - sensor.noomis
     hours_to_show: 168 
     
+  gr6:
+    name: BatteryHist
+    entities:
+      - sensor.ring_front_door_battery
+      - sensor.tunnistin
+      - sensor.masterbed1
+      - sensor.masterbed2
+    hours_to_show: 168
 
 # View all events in a logbook
 logbook:
@@ -185,6 +193,11 @@ sensor:
     devices:
       0a5202014701013b1e0269:
         name: EdvinOutside
+        data_type:
+         - Humidity
+         - Temperature
+      0a520a0259010100270279:
+        name: CoTech
         data_type:
          - Humidity
          - Temperature

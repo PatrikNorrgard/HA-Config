@@ -108,7 +108,7 @@
   condition: []
   id: '1519565910987'
   trigger:
-  - below: '5'
+  - below: '4'
     entity_id: sensor.garage
     platform: numeric_state
 - action:

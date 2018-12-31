@@ -12,6 +12,7 @@ Office:
   entities:
   - switch.rfx_old1
   - switch.rfx_new5
+  - input_boolean.nas_wol
   - media_player.denon_avrx1300w
   - media_player.office
 
@@ -96,6 +97,7 @@ BatteryLevels:
   - sensor.tunnistin
   - sensor.masterbed1
   - sensor.masterbed2
+  - history_graph.batteryhist
 
 Utility:
   name: Utility usage
@@ -154,3 +156,15 @@ Kids:
   - sensor.Edvins
   - switch.rfx_new6
   - switch.telldus_tzwp100_plugin_switch_switch
+
+ER-X:
+  icon: mdi:ethernet
+  entities:
+  - sensor.erx_bytes_received
+  - sensor.erx_bytes_sent
+  - sensor.erx_kbytesec_received
+  - sensor.erx_kbytesec_sent
+  - sensor.erx_packets_received
+  - sensor.erx_packets_sent
+  - sensor.erx_packetssec_received
+  - sensor.erx_packetssec_sent
