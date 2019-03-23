@@ -19,28 +19,38 @@ homeassistant:
 # Enables the frontend
 frontend:
 
+system_health:
+
+speedtestdotnet:
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+  server_id: 4549
+
 alert:
-  big_garage_door:
-    name: Alert! Big garage door left open!
-    done_message: Ok! Big garage closed again.
+#  big_garage_door:
+#    name: Alert! Big garage door left open!
+#    done_message: Ok! Big garage closed again.
+#    entity_id: binary_sensor.fibaro_system_fgbs001_universal_binary_sensor_sensor_2
+#    state: 'on'
+#    repeat:
+#      - 5
+#      - 10
+#      - 15
+#      - 30
+#    can_acknowledge: True
+#    skip_first: True
+#    notifiers:
+#      - push_message  
+
+  freezer_door:
+    name: Alert! Freezer door left open!
+    done_message: Ok! Freezer door closed again.
     entity_id: binary_sensor.fibaro_system_fgbs001_universal_binary_sensor_sensor
     state: 'on'
     repeat:
-      - 5
-      - 10
-      - 15
-      - 30
-    can_acknowledge: True
-    skip_first: True
-    notifiers:
-      - push_message  
-
-  small_garage_door:
-    name: Alert! Side garage door left open!
-    done_message: Ok! Side door closed again.
-    entity_id: binary_sensor.fibaro_system_fgbs001_universal_binary_sensor_sensor_2
-    state: 'on'
-    repeat:
+      - 1
       - 5
       - 10
       - 15
@@ -228,12 +238,12 @@ sensor:
      - last_motion
 #     - volume
 
-  - platform: speedtest
-    monitored_conditions:
-      - ping
-      - download
-      - upload
-    server_id: 4549
+#  - platform: speedtest
+#    monitored_conditions:
+#      - ping
+#      - download
+#      - upload
+#    server_id: 4549
 
 #  - platform: mqtt
 #    state_topic: "sensor/sht30/temperature"
@@ -362,7 +372,7 @@ zwave:
 switch:
   platform: rfxtrx
   automatic_add: false
-  signal_repititions: 2
+  #signal_repititions: 2
   devices:
     0b1100040059af9601010f70:
       name: rfx_new1

@@ -62,7 +62,7 @@
     state: 'on'
   id: '1511554586438'
   trigger:
-    platform: time
+    platform: time_pattern
     minutes: /1
     seconds: /30
 - id: '1518799968022'

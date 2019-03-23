@@ -24,7 +24,8 @@ Outside:
   - sensor.popp_unknown_type0004_id0011_water
 #  - sensor.popp_unknown_type0004_id0011_rain_rate
   - sensor.popprainrate_mean
-  - switch.extlights
+#  - switch.extlights
+  - switch.rfx_garageextlights
 
 OutsideView:
   view: true
@@ -87,7 +88,7 @@ MainViewSensors:
   - sensor.edvins
   - sensor.sauna
   - sensor.saunarh
-  - sensor.cputemp
+  - sensor.cpu_temp
 
 BatteryLevels:
   name: Battery%
@@ -129,7 +130,7 @@ Garage:
   view: true
   icon: mdi:garage
   entities:
-  - group.doors
+#  - group.doors
   - sensor.outdoor
   - sensor.fibaro_system_fgwpef_wall_plug_gen5_energy
   - sensor.fibaro_system_fgwpef_wall_plug_gen5_power
