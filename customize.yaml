@@ -119,3 +119,9 @@ binary_sensor.fibaro_system_fgbs001_universal_binary_sensor_sensor:
   device_class: garage_door
 switch.rfx_new4:
   friendly_name: rfx_new4(broken, dummy for pc)
+binary_sensor.freezerdoor:
+  friendly_name: Freezer
+  device_class: problem
+binary_sensor.fridgedoor:
+  device_class: problem
+  friendly_name: Fridge

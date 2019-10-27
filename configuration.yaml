@@ -72,8 +72,8 @@ nest:
 rfxtrx:
   device: /dev/serial/by-id/usb-RFXCOM_RFXtrx433_A12GLERC-if00-port0
 
-#mqtt:
-#  broker: 10.0.0.201
+mqtt:
+  broker: 10.0.0.91
 #  protocol: 3.1
 #  username: !secret mqttuser
 #  password: !secret mqttpass
@@ -357,6 +357,22 @@ sensor:
     scan_interval: 900
 
 #echo "scale=2;$(cat /sys/class/thermal/thermal_zone0/temp) / 1000"  | bc
+
+binary_sensor:
+  - platform: mqtt
+    state_topic: "/Kitchen/FreezerDoor/open"
+    name: "FreezerDoor"
+    payload_on: "1"
+    payload_off: "0"
+    device_class: opening
+
+  - platform: mqtt
+    state_topic: "/Kitchen/FridgeDoor/open"
+    name: "FridgeDoor"
+    payload_on: "1"
+    payload_off: "0"
+    device_class: opening
+
 
 # Text to speech
 tts:
